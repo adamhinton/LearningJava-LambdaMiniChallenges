@@ -47,7 +47,11 @@ public class Main {
          String myThingy = everySecondCharacter(everySecondChar, "1234567890");
          System.out.println(myThingy);
 
-        Supplier<String> iLoveJava = (() -> "I love Java");
+        Supplier<String> iLoveJava = (() -> "I love Java!");
+
+        var supplierResult = iLoveJava.get();
+        System.out.println(supplierResult);
+
     }
 
     public static String everySecondCharacter(Function<String, String> func, String source){
