@@ -3,6 +3,7 @@ package dev.lpa;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 public class Main {
@@ -33,7 +34,7 @@ public class Main {
          UnaryOperator<String> everySecondChar = (source ->{
             StringBuilder returnVal = new StringBuilder();
             for(int i=0; i< source.length(); i++){
-                if(i %2 ==1){
+                if(i %2 == 1){
                     returnVal.append(source.charAt(i));
                 }
             }
@@ -44,7 +45,9 @@ public class Main {
          System.out.println(mySol);
 
          String myThingy = everySecondCharacter(everySecondChar, "1234567890");
-System.out.println(myThingy);
+         System.out.println(myThingy);
+
+        Supplier<String> iLoveJava = (() -> "I love Java");
     }
 
     public static String everySecondCharacter(Function<String, String> func, String source){
